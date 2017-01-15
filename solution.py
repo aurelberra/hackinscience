@@ -91,15 +91,33 @@
 # else:
 #     print(int(sys.argv[1]) + int(sys.argv[2]))
 
-# 20 Write a script named solution.py that print the result of simple substraction. If no parameters is given, you must print the following error message: usage: python3 solution.py OP1 OP2.
+# 18 Write a script named solution.py that print the result of simple substraction. If no parameters is given, you must print the following error message: usage: python3 solution.py OP1 OP2.
 # import sys
 # if len(sys.argv) != 3:
 #     print('usage: python3 solution.py OP1 OP2')
 # else:
 #     print(int(sys.argv[1]) - int(sys.argv[2]))
 
-# 25 Write a program called solution.py that print the actual date (day month year hour minute and seconds) in a human readable format
-import datetime
-print("Today is", datetime.date.today(), "and it is", datetime.datetime.now().strftime('%H:%M:%S'))
+# 19 Write a program called solution.py that print the actual date (day month year hour minute and seconds) in a human readable format
+# import datetime
+# print("Today is", datetime.date.today(), "and it is", datetime.datetime.now().strftime('%H:%M:%S'))
 
-#
+# 20 Write a script names solution.py that prints every even numbers between 1 and 100 inclusive, one line per each.
+# for i in range (1,101):
+#     if i % 2 != 0:
+#         pass
+#     else:
+#         print(i)
+
+# 21 Provide a script solution.py that prints the sum of every even numbers in the range [0; 100]
+# sum = 0
+# for i in range (0,101):
+#     if i % 2 != 0:
+#         pass
+#     else:
+#         sum += i
+# print(sum)
+
+# 22 Provide the script solution.py where you define a function sqrt(num), where num is a number and sqrt a funtion that returns the square root of num.
+def sqrt(num)
+# to be continued…
