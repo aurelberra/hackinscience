@@ -119,5 +119,38 @@
 # print(sum)
 
 # 22 Provide the script solution.py where you define a function sqrt(num), where num is a number and sqrt a funtion that returns the square root of num.
-def sqrt(num)
-# to be continued…
+## DOES NOT VALIDATE: WHY?
+# def sqrt(num):
+#    "This function prints the square root of number `num`"
+#    num_sqrt = num ** 0.5
+#    print(num_sqrt)
+#
+# def sqrt(num):
+#     "This function prints the square root of number `num`"
+#     num_sqrt = num ** 0.5
+#     if num == 0:
+#         print(float(num))
+#     else:
+#         print(num_sqrt)
+#
+# sqrt(0)
+# sqrt(16)
+# sqrt(3)
+
+# 23 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000 and print it with a script named solution.py.
+# sum = 0
+# for i in range (0,1000):
+#     if i % 3 == 0 or i % 5 == 0:
+#         sum += i
+#     else:
+#         pass
+# print(sum)
+
+# 24 Provide the script solution.py that prints every possible pairs of two letters, only lower case, one by line, ordered alphabetically.
+aa
+ab
+...
+ba
+bb
+...
+zz
