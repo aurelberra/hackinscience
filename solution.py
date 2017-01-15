@@ -129,10 +129,10 @@
 #     "This function prints the square root of number `num`"
 #     num_sqrt = num ** 0.5
 #     if num == 0:
-#         print(float(num))
+#         print(0)
 #     else:
 #         print(num_sqrt)
-#
+
 # sqrt(0)
 # sqrt(16)
 # sqrt(3)
@@ -147,10 +147,10 @@
 # print(sum)
 
 # 24 Provide the script solution.py that prints every possible pairs of two letters, only lower case, one by line, ordered alphabetically.
-aa
-ab
-...
-ba
-bb
-...
-zz
+# aa
+# ab
+# ...
+# ba
+# bb
+# ...
+# zz
