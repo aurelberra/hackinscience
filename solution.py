@@ -316,28 +316,50 @@
 # Your program will give a usage message if you don't give the three parameters.
 # For every other errors like if an operand is not an integer, you'll print an input error.
 
-import sys
-def calculator(num1, operator, num2):
-    if len(sys.argv) != 1:
-        print('Please enter two numbers exactly.')
-    # elif num1 or num2
-    elif:
-        if operator == "+":
-            print(num1 + num2)
-        elif operator == "-":
-            print(num1 - num2)
-        elif operator == "*":
-            print(num1 * num2)
-        elif operator == "/":
-            print(num1 / num2)
-        elif operator == "%":
-            print(num1 % num2)
-        elif operator == "^":
-            print(num1 ^ num2)
-    else:
-        print('usage: ./solution.py a_number (an_operator +-*/%^) a_number')
+# import sys
+# if len(sys.argv) != 4:
+#     print('usage: ./solution.py a_number (an_operator +-*/%^) a_number')
+# else:
+#     try:
+#         num1 = int(sys.argv[1])
+#         operator = sys.argv[2]
+#         num2 = int(sys.argv[3])
+#         if operator == "+":
+#             print(num1 + num2)
+#         elif operator == "-":
+#             print(num1 - num2)
+#         elif operator == "*":
+#             print(num1 * num2)
+#         elif operator == "/":
+#             print(num1 / num2)
+#         elif operator == "%":
+#             print(num1 % num2)
+#         elif operator == "^":
+#             print(num1 ** num2)
+#         else:
+#             raise
+#     except:
+#         print('input error')
+## Solution plus compexe pour les erreurs
+    # else:
+    #         raise Exception("Problème !")
+    # except Exception as e:
+    #     print(e)
 
 # 200 - # Create a function, is_prime, that check if its given number is a prime one
+# Provide a script defining the function is_prime(num).
+# num is number that the function is_prime takes as a parameter.
+# The function is_prime return True if num is a prime number, False otherwise.
+
+def is_prime(num):
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                return False
+        return True
+    else:
+        return False
+
 # 204 - # Perfect deck shuffle
 # 210 - # Print the sum of every prime number < 1000
 # 215 - # Pernicious numbers
