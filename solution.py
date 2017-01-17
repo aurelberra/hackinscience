@@ -405,21 +405,138 @@
 
 # 210 - # Print the sum of every prime number < 1000
 
-## 200 was
-def is_prime(num):
-    if num > 1:
-        for i in range(2, num):
-            if num % i == 0:
-                return False
-        return True
-    else:
-        return False
-
+# def is_prime(num):
+#     if num > 1:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 return False
+#         return True
+#     else:
+#         return False
+#
+# my_primes = []
+# for i in range (0, 1001):
+#     if is_prime(i) == True:
+#         my_primes.append(i)
+#     else:
+#         pass
+#
+# print(sum(my_primes))
 
 # 215 - # Pernicious numbers
+# def is_prime(num):
+#     if num > 1:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 return False
+#         return True
+#     else:
+#         return False
+#
+# numbers = []
+# for i in range(222281, 222381):
+#     num_bin = bin(i)[2:]
+#     total_num_list = []
+#     for j in num_bin:
+#         total_num_list.append(float(j))
+#     total_num_sum = round(sum(total_num_list))
+#     if is_prime(total_num_sum):
+#         numbers.append(i)
+#     else:
+#         pass
+# for k in numbers:
+#     print(k)
+
 # 220 - # Print every prime numbers in a range
+# print every prime number in the range [10000;10050], on one line, separated by comas and spaces.
+# def is_prime(num):
+#     if num > 1:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 return False
+#         return True
+#     else:
+#         return False
+#
+# numbers = []
+# for i in range(10000,10050):
+#     if is_prime(i):
+#         numbers.append(i)
+#     else:
+#         pass
+# print(*numbers, sep=', ')
+
 # 230 - # Print the fist prime number after the given one
+# Provide a script that prints the first prime number greater than 100000000.
+# You may use itertools.count(), and you may need sys.exit().
+
+# from itertools import *
+# import sys
+#
+# def is_prime(num):
+#     if num > 1:
+#         for i in range(2, int(num ** 0.5)):
+#             if num % i == 0:
+#                 return False
+#         return True
+#     else:
+#         return False
+#
+# p = count(100000000)
+# for i in p:
+#     if is_prime(i):
+#         print(i)
+#         exit()
+
 # 240 - # Print the head of the fibonacci sequence
+# Consider the fibonacci sequence starting with 1, 2, 3. Provide the script that print the 10 first numbers of this sequence, separated by comas and spaces, end with a dot. Such as:
+# 1, 2, 3, X, X, X, X, X, X, X.
+
+# fib = [1, 2, 3]
+# for n in range(1, 8):
+#     fib.append(fib[-1] + fib[-2])
+# print(*fib, sep=', ', end='.')
+
+# fib = [1, 2]
+# for n in range(1, 9):
+#     fib.append(fib[-1] + fib[-2])
+# print(*fib, sep=', ', end='.')
+
+# 245 - # Student class
+Implement a Student, School, and a City classes like so:
+
+Student, School, and City have a name attribute, given as construction.
+A Student have an add_exam(mark) method, recoding a new mark for him, as a float.
+A School have an add_student(student) method.
+A City have an add_school(school) method.
+Student, School, and City have a get_mean() method giving:
+For the Student, the average of its results.
+For the School, the average of the students averages.
+For the City the average of the School averages.
+School have a get_best_student() method.
+Cities have a get_best_school() and a get_best_student() methods.
+
+
+def main():
+    paris = City('paris')
+    hkis = School('hkis')
+    paris.add_school(hkis)
+    for student_name, student_marks in (('alice', (1, 2, 3)),
+                                        ('bob', (2, 3, 4)),
+                                        ('catherine', (3, 4, 5)),
+                                        ('daniel', (4, 5, 6))):
+        student = Student(student_name)
+        for mark in student_marks:
+            student.add_exam(mark)
+        hkis.add_student(student)
+    print(paris.get_best_school().name)
+    print(paris.get_best_student().name)
+
+
+if __name__ == '__main__':
+    main()
+
+
 # 250 - # Draw N Squares
 # 260 - # 3 Ways to Distance
 # 270 - # Roman Numerals
