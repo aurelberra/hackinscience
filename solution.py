@@ -351,6 +351,61 @@
 # num is number that the function is_prime takes as a parameter.
 # The function is_prime return True if num is a prime number, False otherwise.
 
+# def is_prime(num):
+#     if num > 1:
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 return False
+#         return True
+#     else:
+#         return False
+
+# 204 - # Perfect deck shuffle
+# A perfect shuffle of a deck of card is splitting a deck of cards into equal halves, and perfectly interleaving them.
+# Perfectly shuffling [1, 2, 3, 4, 5, 6] gives [1, 4, 2, 5, 3, 6].
+# You'll expose a perfect_shuffle(deck) function, perfectly shuffling the given iterable.
+# Did you know that if you shuffle 10 times a deck of 1024 cards, the deck returns to its initial state ? It's probably a good way to test your implementation.
+
+# import operator
+# from itertools import *
+# def perfect_shuffle(deck):
+#     middle = len(deck)/2
+#     half1 = deck[:int(middle)]
+#     half2 = deck[int(middle):]
+#     shuffled = list(zip_longest(half1, half2, fillvalue='-'))
+#     shuffled_as_list = list(chain.from_iterable(shuffled))
+#     return shuffled_as_list
+
+# perfect_shuffle(deck)
+# perfect_shuffle([1, 2, 3, 4, 5, 6])
+
+## Test: shuffle 10 times a deck of 1024 cards
+## Create deck of 1024 cards
+# deck1024 = []
+# for x in range(1,1025):
+#     deck1024.append(x)
+# print(deck1024[0])
+# print(deck1024[-1])
+#
+## Shuffle desk1024
+# print(perfect_shuffle(deck1024))
+# for i in range(1,3):
+#     perfect_shuffle(deck1024)
+# repeat(perfect_shuffle(deck1024),3)
+# print(deck1024)
+# print(deck1024[0])
+# print(deck1024[-1])
+# print(mytest)
+#
+# test1024 = perfect_shuffle(deck1024)
+# print(test1024)
+# print(test1024[0])
+# print(test1024[-1])
+
+
+# 210 - # Print the sum of every prime number < 1000
+
+## 200 was
 def is_prime(num):
     if num > 1:
         for i in range(2, num):
@@ -360,8 +415,7 @@ def is_prime(num):
     else:
         return False
 
-# 204 - # Perfect deck shuffle
-# 210 - # Print the sum of every prime number < 1000
+
 # 215 - # Pernicious numbers
 # 220 - # Print every prime numbers in a range
 # 230 - # Print the fist prime number after the given one
