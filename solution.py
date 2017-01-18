@@ -489,6 +489,8 @@
 #         exit()
 
 # 240 - # Print the head of the fibonacci sequence
+
+# V1 ante corr.
 # Consider the fibonacci sequence starting with 1, 2, 3. Provide the script that print the 10 first numbers of this sequence, separated by comas and spaces, end with a dot. Such as:
 # 1, 2, 3, X, X, X, X, X, X, X.
 
@@ -502,63 +504,174 @@
 #     fib.append(fib[-1] + fib[-2])
 # print(*fib, sep=', ', end='.')
 
-# 245 - # Student class
-Implement a Student, School, and a City classes like so:
+# V2 corrected
+# Consider the fibonacci sequence. Provide the script that print the 10 first numbers of this sequence, separated by comas and spaces, end with a dot. Such as:
+# 1, 1, 2, 3, X, X, X, X, X, X.
 
-Student, School, and City have a name attribute, given as construction.
-A Student have an add_exam(mark) method, recoding a new mark for him, as a float.
-A School have an add_student(student) method.
-A City have an add_school(school) method.
-Student, School, and City have a get_mean() method giving:
-For the Student, the average of its results.
-For the School, the average of the students averages.
-For the City the average of the School averages.
-School have a get_best_student() method.
-Cities have a get_best_school() and a get_best_student() methods.
+# fib = [1, 1]
+# for n in range(1, 9):
+#     fib.append(fib[-1] + fib[-2])
+# print(*fib, sep=', ', end='.')
 
 
-def main():
-    paris = City('paris')
-    hkis = School('hkis')
-    paris.add_school(hkis)
-    for student_name, student_marks in (('alice', (1, 2, 3)),
-                                        ('bob', (2, 3, 4)),
-                                        ('catherine', (3, 4, 5)),
-                                        ('daniel', (4, 5, 6))):
-        student = Student(student_name)
-        for mark in student_marks:
-            student.add_exam(mark)
-        hkis.add_student(student)
-    print(paris.get_best_school().name)
-    print(paris.get_best_student().name)
+
+# @TODO # 245 - # Student class
+# Implement a Student, School, and a City classes like so:
+#
+# Student, School, and City have a name attribute, given as construction.
+# A Student have an add_exam(mark) method, recoding a new mark for him, as a float.
+# A School have an add_student(student) method.
+# A City have an add_school(school) method.
+# Student, School, and City have a get_mean() method giving:
+# For the Student, the average of its results.
+# For the School, the average of the students averages.
+# For the City the average of the School averages.
+# School have a get_best_student() method.
+# Cities have a get_best_school() and a get_best_student() methods.
+#
+#
+# def main():
+#     paris = City('paris')
+#     hkis = School('hkis')
+#     paris.add_school(hkis)
+#     for student_name, student_marks in (('alice', (1, 2, 3)),
+#                                         ('bob', (2, 3, 4)),
+#                                         ('catherine', (3, 4, 5)),
+#                                         ('daniel', (4, 5, 6))):
+#         student = Student(student_name)
+#         for mark in student_marks:
+#             student.add_exam(mark)
+#         hkis.add_student(student)
+#     print(paris.get_best_school().name)
+#     print(paris.get_best_student().name)
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+# @TODO # 250 - # Draw N Squares
+# @TODO # 260 - # 3 Ways to Distance
+
+# @TODO # 270 - # Roman Numerals
+# Create a to_roman_numeral function converting a given number to Roman Numerals like:
+# >>> to_roman_numeral(1)
+# 'I'
+# >>> to_roman_numeral(2)
+# 'II'
+# >>> to_roman_numeral(4)
+# 'IV'
+# >>> to_roman_numeral(8)
+# 'VIII'
+# >>> to_roman_numeral(16)
+# 'XVI'
+# >>> to_roman_numeral(32)
+# 'XXXII'
 
 
-if __name__ == '__main__':
-    main()
+# @TODO # 280 - # Exceptions
+# @TODO # 285 - # Doing HTTP requests
 
-
-# 250 - # Draw N Squares
-# 260 - # 3 Ways to Distance
-# 270 - # Roman Numerals
-# 280 - # Exceptions
-# 285 - # Doing HTTP requests
 # 300 - # Print the content of the file 'words'
+
+# infile = open("words.txt","w+")
+# for i in range(1):
+#     infile.write("Longtemps\nje\nme\nsuis\ncouché\nde\nbonne\nheure")
+# infile.close()
+
+# infile = open("words.txt", "r")
+# text = infile.read()
+# infile.close()
+# print(text)
+
 # 310 - # Count the lower 'e' in the 'words' file
+# Your programm have to open the file words.txt, count the 'e', and print the count.
+
+# infile = open("words.txt", "r")
+# text = infile.read()
+# infile.close()
+# count_of_es = 0
+# for letter in text:
+#     if letter == "e":
+#         count_of_es += 1
+#     else:
+#         pass
+# print(count_of_es)
+
 # 320 - # Give the frequency of letters in the 'words' file
+# Your programme will have to open the file 'words.txt', compute the frequency of every letters, and display it according to this format:
+# b: 0.02
+# p: 0.02
+
+# infile = open("words.txt", "r")
+# text = infile.read()
+# infile.close()
+#
+# frequencies = {}
+# sum_frequencies = 0
+# for char in text:
+#     if char == "\n":
+#         pass
+#     elif char in frequencies:
+#         frequencies[char] += 1
+#         sum_frequencies += 1
+#     else:
+#         frequencies[char] = 1
+#         sum_frequencies += 1
+#
+# for char, frequency in frequencies.items():
+#     print(char,": ", "%.2f" % (frequency/sum_frequencies), sep='')
+
 # 328 - # Multiply all the given parameters
+# Write a function, mul, that multiplies all numbers of the given list of numbers.
+# like:
+# print(mul([1, 2, 3]))
+# 6
+# print(mul([0, 1, 2, 3]))
+# 0
+# print(mul([2, 3, 4]))
+# 24
+
+# def mul(listnum):
+#     count = 1
+#     for num in range(0,len(listnum)):
+#         count *= listnum[num]
+#     return(count)
+
 # 329 - # Largest product in a series
-# 350 - # bencode / bdecode
-# 440 - # Lambda expressions
-# 450 - # Caesar Cypher
-# 455 - # Py Master Mind
-# 456 - # Solve Mind
-# 461 - # Optimization 101
-# 500 - # Largest product in a grid
-# 501 - # Change for 42€
-# 515 - # Sequence Mining
-# 525 - # Longest Collatz sequence
-# 600 - # Elementary cellular automaton
-# 700 - # Make your own 2048 in python !
-# 705 - # Evolve mind
-# 715 - # Sapin
-# 742 - # Be creative, import math
+# adjacent_num = 4
+# products_of_four = []
+# for num in range(0,1000 - adjacent_num - 1):
+#     countnum = 1
+#     for i in range(0,adjacent_num):
+#         countnum *= int(euler_number[num+i])
+#     products_of_four.append(countnum)
+# print(max(products_of_four))
+
+# euler_number = 7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450
+# euler_number = str(euler_number)
+#
+# adjacent_num = 13
+# products_of_thirteen = []
+# for num in range(0,(1000 - adjacent_num - 1)):
+#     countnum = 1
+#     for i in range(0,adjacent_num):
+#         countnum *= int(euler_number[num+i])
+#     products_of_thirteen.append(countnum)
+# print(max(products_of_thirteen))
+
+
+# @TODO # 350 - # bencode / bdecode
+# @TODO # 440 - # Lambda expressions
+# @TODO # 450 - # Caesar Cypher
+# @TODO # 455 - # Py Master Mind
+# @TODO # 456 - # Solve Mind
+# @TODO # 461 - # Optimization 101
+# @TODO # 500 - # Largest product in a grid
+# @TODO # 501 - # Change for 42€
+# @TODO # 515 - # Sequence Mining
+# @TODO # 525 - # Longest Collatz sequence
+# @TODO # 600 - # Elementary cellular automaton
+# @TODO # 700 - # Make your own 2048 in python !
+# @TODO # 705 - # Evolve mind
+# @TODO # 715 - # Sapin
+# @TODO # 742 - # Be creative, import math
