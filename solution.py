@@ -517,7 +517,6 @@
 
 # @TODO # 245 - # Student class
 # Implement a Student, School, and a City classes like so:
-#
 # Student, School, and City have a name attribute, given as construction.
 # A Student have an add_exam(mark) method, recoding a new mark for him, as a float.
 # A School have an add_student(student) method.
@@ -528,26 +527,72 @@
 # For the City the average of the School averages.
 # School have a get_best_student() method.
 # Cities have a get_best_school() and a get_best_student() methods.
-#
-#
-# def main():
-#     paris = City('paris')
-#     hkis = School('hkis')
-#     paris.add_school(hkis)
-#     for student_name, student_marks in (('alice', (1, 2, 3)),
-#                                         ('bob', (2, 3, 4)),
-#                                         ('catherine', (3, 4, 5)),
-#                                         ('daniel', (4, 5, 6))):
-#         student = Student(student_name)
-#         for mark in student_marks:
-#             student.add_exam(mark)
-#         hkis.add_student(student)
-#     print(paris.get_best_school().name)
-#     print(paris.get_best_student().name)
-#
-#
+
+# def get_marks_thib(self):
+#     return [m for student in self.students for m in student.marks]
+# def get_marks_hack(self):
+#     return self.marks
+
+class Student():
+    def __init__(self, name):
+        self.name = name
+        self.marks = []
+    def add_exam(self, mark):
+        self.marks.append(float(mark))
+    def get_mean(self):
+        return float((sum(self.marks)) / max(len(self.marks), 1))
+
+class School():
+    def __init__(self, name):
+        self.name = name
+        self.students = []
+    def add_student(self, student):
+        self.students.append(student)
+    def get_mean(self):
+        return float((sum(self.marks)) / max(len(self.marks), 1))
+    def get_best_student(self):
+        for student in self.students:
+            self.get_mean() # to be continued…
+
+class City():
+    def __init__(self, name):
+        self.name = name
+        self.schools = []
+    def add_school(self, school):
+        self.schools.append(school)
+    def get_mean(self):
+        return float((sum(self.marks)) / max(len(self.marks), 1))
+    def get_best_school(self):
+        for school in self.schools:
+            print(self.get_mean())
+    def get_best_student(self):
+        for student in self.students:
+            print(self.get_mean())
+
+def main():
+    paris = City('paris')
+    hkis = School('hkis')
+    paris.add_school(hkis)
+    for student_name, student_marks in (('alice', (1, 2, 3)),
+                                        ('bob', (2, 3, 4)),
+                                        ('catherine', (3, 4, 5)),
+                                        ('daniel', (4, 5, 6))):
+        student = Student(student_name)
+        for mark in student_marks:
+            student.add_exam(mark)
+        hkis.add_student(student)
+    print(paris.get_best_school().name)
+    print(paris.get_best_student().name)
+
+main()
+
 # if __name__ == '__main__':
 #     main()
+
+# Thibault's geek joke
+# class PhDStudent(Tutor):
+#     def __init__(self, topic):
+#         super(PhDStudent, self).__init__(self, topic)
 
 # 250 - # Draw N Squares
 # You must provide the function draw_n_squares(n) that returns a string of squares, such as:
