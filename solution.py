@@ -549,7 +549,24 @@
 # if __name__ == '__main__':
 #     main()
 
-# @TODO # 250 - # Draw N Squares
+# 250 - # Draw N Squares
+# You must provide the function draw_n_squares(n) that returns a string of squares, such as:
+# print(draw_n_squares(1))
+# +---+
+# |   |
+# +---+
+# n is the number of squares on the diagonal.
+
+# def draw_n_squares(n):
+#     odd_line = "+---" * n + "+"
+#     even_line = "|   " * n + "|"
+#     final_line = "+---" * n + "+"
+#     return((odd_line + "\n" + even_line + "\n") * n + final_line)
+#
+# print(draw_n_squares(1))
+# print(draw_n_squares(3))
+# print(draw_n_squares(5))
+
 # @TODO # 260 - # 3 Ways to Distance
 
 # @TODO # 270 - # Roman Numerals
@@ -567,9 +584,24 @@
 # >>> to_roman_numeral(32)
 # 'XXXII'
 
+# 280 - # Exceptions
 
-# @TODO # 280 - # Exceptions
-# @TODO # 285 - # Doing HTTP requests
+# import sys
+# try:
+#     print(sys.argv[1])
+# except IndexError:
+#     print("Not enough parameters.")
+
+
+# 285 - # Doing HTTP requests
+
+# import sys
+# import requests
+# try:
+#     r = requests.get('https://api.github.com/users/python')
+#     print(r.text)
+# except Exception:
+#     print("No internet connectivity.")
 
 # 300 - # Print the content of the file 'words'
 
