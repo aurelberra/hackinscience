@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 # Hackinscience Exercises
 
 # 001 - # Strings
@@ -514,8 +516,7 @@
 # print(*fib, sep=', ', end='.')
 
 
-
-# @TODO # 245 - # Student class
+# 245 - # Student class
 # Implement a Student, School, and a City classes like so:
 # Student, School, and City have a name attribute, given as construction.
 # A Student have an add_exam(mark) method, recoding a new mark for him, as a float.
@@ -528,71 +529,92 @@
 # School have a get_best_student() method.
 # Cities have a get_best_school() and a get_best_student() methods.
 
-# def get_marks_thib(self):
-#     return [m for student in self.students for m in student.marks]
-# def get_marks_hack(self):
-#     return self.marks
-
-class Student():
-    def __init__(self, name):
-        self.name = name
-        self.marks = []
-    def add_exam(self, mark):
-        self.marks.append(float(mark))
-    def get_mean(self):
-        return float((sum(self.marks)) / max(len(self.marks), 1))
-
-class School():
-    def __init__(self, name):
-        self.name = name
-        self.students = []
-    def add_student(self, student):
-        self.students.append(student)
-    def get_mean(self):
-        return float((sum(self.marks)) / max(len(self.marks), 1))
-    def get_best_student(self):
-        for student in self.students:
-            self.get_mean() # to be continued…
-
-class City():
-    def __init__(self, name):
-        self.name = name
-        self.schools = []
-    def add_school(self, school):
-        self.schools.append(school)
-    def get_mean(self):
-        return float((sum(self.marks)) / max(len(self.marks), 1))
-    def get_best_school(self):
-        for school in self.schools:
-            print(self.get_mean())
-    def get_best_student(self):
-        for student in self.students:
-            print(self.get_mean())
-
-def main():
-    paris = City('paris')
-    hkis = School('hkis')
-    paris.add_school(hkis)
-    for student_name, student_marks in (('alice', (1, 2, 3)),
-                                        ('bob', (2, 3, 4)),
-                                        ('catherine', (3, 4, 5)),
-                                        ('daniel', (4, 5, 6))):
-        student = Student(student_name)
-        for mark in student_marks:
-            student.add_exam(mark)
-        hkis.add_student(student)
-    print(paris.get_best_school().name)
-    print(paris.get_best_student().name)
-
-main()
-
+# class Student():
+#     def __init__(self, name):
+#         self.name = name
+#         self.marks = []
+#     def add_exam(self, mark):
+#         self.marks.append(float(mark))
+#     def get_mean(self):
+#         return float(sum(self.marks)) / max(len(self.marks), 1)
+#
+# class School():
+#     def __init__(self, name):
+#         self.name = name
+#         self.students = []
+#     def add_student(self, student):
+#         self.students.append(student)
+#     def get_mean(self):
+#         if len(self.students) == 0:
+#                 return None
+#         means_of_each_student = []
+#         for student in self.students:
+#             means_of_each_student.append(student.get_mean())
+#         return sum(means_of_each_student) / len(means_of_each_student)
+#     def get_best_student(self):
+#         best_student_mean = 0
+#         best_student = None
+#         for student in self.students:
+#             if student.get_mean() > best_student_mean:
+#                 best_student_mean = student.get_mean()
+#                 best_student = student
+#         return best_student
+#
+# class City():
+#     def __init__(self, name):
+#         self.name = name
+#         self.schools = []
+#     def add_school(self, school):
+#         self.schools.append(school)
+#     def get_mean(self):
+#         if len(self.schools) == 0:
+#                 return None
+#         means_of_each_school = []
+#         for school in self.schools:
+#             if len(school.students) == 0:
+#                 return None
+#             for student in school.students:
+#                 means_of_each_school.append(student.get_mean())
+#         return sum(means_of_each_school) / len(means_of_each_school)
+#     def get_best_school(self):
+#         best_school_mean = 0
+#         best_school = None
+#         if len(self.schools) == 0:
+#             return None
+#         for school in self.schools:
+#             if school.get_mean() > best_school_mean:
+#                 best_school_mean = school.get_mean()
+#                 best_school = school
+#         return best_school
+#     def get_best_student(self):
+#         best_student_mean = 0
+#         best_student = None
+#         for school in self.schools:
+#             if len(school.students) == 0:
+#                 return None
+#             for student in school.students:
+#                 if student.get_mean() > best_student_mean:
+#                     best_student_mean = student.get_mean()
+#                     best_student = student
+#         return best_student
+#
+# def main():
+#     paris = City('paris')
+#     hkis = School('hkis')
+#     paris.add_school(hkis)
+#     for student_name, student_marks in (('alice', (1, 2, 3)),
+#                                         ('bob', (2, 3, 4)),
+#                                         ('catherine', (3, 4, 5)),
+#                                         ('daniel', (4, 5, 6))):
+#         student = Student(student_name)
+#         for mark in student_marks:
+#             student.add_exam(mark)
+#         hkis.add_student(student)
+#     print(paris.get_best_school().name)
+#     print(paris.get_best_student().name)
+#
 # if __name__ == '__main__':
 #     main()
-
-# Thibault's geek joke
-# class PhDStudent(Tutor):
-#     def __init__(self, topic):
-#         super(PhDStudent, self).__init__(self, topic)
 
 # 250 - # Draw N Squares
 # You must provide the function draw_n_squares(n) that returns a string of squares, such as:
@@ -738,8 +760,10 @@ main()
 
 
 # @TODO # 350 - # bencode / bdecode
+# @TODO # 360 - # HTTP server
 # @TODO # 440 - # Lambda expressions
 # @TODO # 450 - # Caesar Cypher
+# @TODO # 451 - # Password Generator
 # @TODO # 455 - # Py Master Mind
 # @TODO # 456 - # Solve Mind
 # @TODO # 461 - # Optimization 101
@@ -748,6 +772,7 @@ main()
 # @TODO # 515 - # Sequence Mining
 # @TODO # 525 - # Longest Collatz sequence
 # @TODO # 600 - # Elementary cellular automaton
+# @TODO # 650 - # DHT
 # @TODO # 700 - # Make your own 2048 in python !
 # @TODO # 705 - # Evolve mind
 # @TODO # 715 - # Sapin
