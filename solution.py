@@ -970,7 +970,74 @@ ascu[0]
 
 # HACK # 455 - # Py Master Mind
 # HACK # 456 - # Solve Mind
+
 # TODO HACK # 461 - # Optimization 101
+# You must provide a script in which the function benchmark(funcs, a, b) returns a dictionnary where keys are the function names and their values the time it took to execute the given function ten times measured in seconds as a float number.
+# funcs is a list of the function to be tested, which are the one of the exercise 260 (euclidean(a, b) ; opt_euclidean(a, b) ; np_euclidean(a, b))
+# a and b are the coordinates of the two points between which the distance must be measured. We assume that a and b are of the type numpy.ndarray.
+# >>> from solution import euclidean, np_euclidean, opt_euclidean
+# >>> a = np.random.randint(100, size=100)
+# >>> b = np.random.randint(100, size=100)
+# >>> funcs = [euclidean, opt_euclidean, np_euclidean]
+# >>> benchs = benchmark(funcs, a, b)
+# >>> print(benchs)
+# {'opt_euclidean': 0.009175331972073764, 'euclidean': 0.02502306899987161, 'np_euclidean': 0.002547977026551962}
+
+import timeit
+
+# No extra module
+def euclidean(a, b):
+    powers = 0
+    for i in range(0,len(a)):
+        powers += (b[i]-a[i]) ** 2
+    return powers ** 0.5
+
+# Importing math module
+from math import *
+def opt_euclidean(a, b):
+    powers = 0
+    for i in range(0,len(a)):
+        powers += pow(b[i]-a[i],2)
+    return sqrt(powers)
+
+# Importing numpy module
+import numpy as np
+def np_euclidean(a, b):
+    powers = 0
+    for i in range(0,len(a)):
+        powers += np.power(b[i]-a[i],2)
+    return sqrt(powers)
+
+# Test
+a = [2,3]
+b = [5,6]
+euclidean(a,b) # 4.242640687119285
+opt_euclidean(a,b) # 4.242640687119285
+np_euclidean(a,b) # 4.242640687119285
+euclidean(a,b) == opt_euclidean(a,b) == np_euclidean(a,b)
+a = [2,3,7,3,4,0,8,2,1]
+b = [5,3,0,7,8,6,9,4,5]
+euclidean(a, b) # 12.12435565298214
+
+import timeit
+wrapped = wrapper(euclidean, a, b)
+timeit.timeit(wrapper)
+
+timeit opt_euclidean(a,b)
+timeit np_euclidean(a,b)
+
+def benchmark(funcs, a, b):
+
+
+a = np.random.randint(100, size=100)
+b = np.random.randint(100, size=100)
+funcs = [euclidean, opt_euclidean, np_euclidean]
+benchs = benchmark(funcs, a, b)
+print(benchs)
+# {'opt_euclidean': 0.009175331972073764, 'euclidean': 0.02502306899987161, 'np_euclidean': 0.002547977026551962}
+
+
+
 # TODO HACK # 470 - # IRC logs as CSV
 # HACK # 500 - # Largest product in a grid
 # TODO HACK # 501 - # Change for 42€
