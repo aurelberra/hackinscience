@@ -634,15 +634,46 @@
 # print(draw_n_squares(3))
 # print(draw_n_squares(5))
 
-# @TODO # 260 - # 3 Ways to Distance
+# 260 - # 3 Ways to Distance
+# d = ( (x2-x1) ** 2 + (y2-y1) ** 2 ) ** 0.5
+# d = ( (5-2) ** 2 + (6-3) ** 2 ) ** 0.5
 # euclidean(a, b) where a and b are iterables containing the coordinates of a point in the euclidean space. The function should return the euclidean distance between points a and b. You should not use any module for this function.
-def euclidean(a, b):
 
-a = [2,3]
-b = [5,6]
-euclidean(a, b) # 4.242640687119285
+# # No extra module
+# def euclidean(a, b):
+#     powers = 0
+#     for i in range(0,len(a)):
+#         powers += (b[i]-a[i]) ** 2
+#     return powers ** 0.5
+#
+# # Importing math module
+# from math import *
+# def opt_euclidean(a, b):
+#     powers = 0
+#     for i in range(0,len(a)):
+#         powers += pow(b[i]-a[i],2)
+#     return sqrt(powers)
+#
+# # Importing numpy module
+# import numpy as np
+# def np_euclidean(a, b):
+#     powers = 0
+#     for i in range(0,len(a)):
+#         powers += np.power(b[i]-a[i],2)
+#     return sqrt(powers)
 
-# @TODO # 270 - # Roman Numerals
+# Test
+# a = [2,3]
+# b = [5,6]
+# euclidean(a,b) # 4.242640687119285
+# opt_euclidean(a,b) # 4.242640687119285
+# np_euclidean(a,b) # 4.242640687119285
+# euclidean(a,b) == opt_euclidean(a,b) == np_euclidean(a,b)
+# a = [2,3,7,3,4,0,8,2,1]
+# b = [5,3,0,7,8,6,9,4,5]
+# euclidean(a, b) # 12.12435565298214
+
+# 270 - # Roman Numerals
 #
 # roman_numerals = (('M',  1000),
 #                  ('CM', 900),
@@ -815,10 +846,97 @@ euclidean(a, b) # 4.242640687119285
 #     print(*filtered(list(range(0,101)), lambda x: x % 15 == 0), sep=', ')
 
 # @TODO # 450 - # Caesar Cypher
+
 # @TODO # 451 - # Password Generator
+# Write a password generator as a function named pwgen taking those parameters:
+# length: the length of the generated password
+# with_digits: Defaulting to True, to allow or disallow digits
+# with_uppercase: Defaulting to True, to allow or disallow capital letters
+
+from random import *
+
+def pwgen(length,with_digits=True,with_uppercase=True):
+    """Generate password of chosen `length` with options for no digit and/or no uppercase"""
+
+    # Define variables and lists
+    passwd = []
+    alpha_lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    alpha_upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    alpha = alpha_lower + alpha_upper
+    num = ['0','1','2','3','4','5','6','7','8','9']
+    alphanum_lower = alpha_lower + num
+    alphanum_upper = alpha_upper + num
+    alphanum = alpha + num
+
+    # Generate password without last element
+    for i in range(0,length-1):
+        if with_digits == False and with_uppercase == False:
+            passwd.append(choice(alpha_lower))
+        elif with_digits == False:
+            passwd.append(choice(alpha))
+        elif with_uppercase == False:
+            passwd.append(choice(alphanum_lower))
+        else:
+            passwd.append(choice(alphanum))
+
+    # Test password for required options, generate last element and replace another if needed
+    if with_digits == True and with_uppercase == False:
+        num_digit = 0
+        for p in passwd:
+            if p.isdigit():
+                num_digit +=1
+        if num_digit == 0:
+            passwd.append(choice(num))
+        else:
+            passwd.append(choice(alphanum_lower))
+
+    elif with_digits == False and with_uppercase == True:
+        num_upper = 0
+        for p in passwd:
+            if p.isupper():
+                num_upper +=1
+        if num_upper == 0:
+            passwd.append(choice(alpha_upper))
+        else:
+            passwd.append(choice(alpha))
+
+    elif with_digits == True and with_uppercase == True:
+        num_digit = 0
+        for p in passwd:
+            if p.isdigit():
+                num_digit +=1
+        num_upper = 0
+        for p in passwd:
+            if p.isupper():
+                num_upper +=1
+        if num_digit == 0 and num_upper == 0:
+            passwd.append(choice(num))
+            passwd[0] = choice(alpha_upper)
+        elif num_digit == 0 and num_upper > 0:
+            passwd.append(choice(num))
+        elif num_digit > 0 and num_upper == 0:
+            passwd.append(choice(alpha_upper))
+        else:
+            passwd.append(choice(alphanum))
+
+    else:
+        passwd.append(choice(alpha_lower))
+
+    # Shuffle and return password as string, not list
+    shuffle(passwd)
+    password = ''.join(passwd)
+    return password
+
+# # Test
+print(*pwgen(10), sep='')
+print(*pwgen(10,with_digits=False), sep='')
+print(*pwgen(10,with_uppercase=False), sep='')
+print(*pwgen(10,with_digits=False,with_uppercase=False), sep='')
+
 # @TODO # 455 - # Py Master Mind
 # @TODO # 456 - # Solve Mind
 # @TODO # 461 - # Optimization 101
+# @TODO # 470 - # IRC logs as CSV
 # @TODO # 500 - # Largest product in a grid
 # @TODO # 501 - # Change for 42€
 # @TODO # 515 - # Sequence Mining
