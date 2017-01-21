@@ -847,7 +847,12 @@
 
 # TODO HACK # 450 - # Caesar Cypher
 
-
+from string import ascii_lowercase
+from string import ascii_uppercase
+ascl = list(ascii_lowercase)
+ascu = list(ascii_uppercase)
+ascl[0]
+ascu[0]
 
 # 451 - # Password Generator
 # Write a password generator as a function named pwgen taking those parameters:
