@@ -635,21 +635,62 @@
 # print(draw_n_squares(5))
 
 # @TODO # 260 - # 3 Ways to Distance
+# euclidean(a, b) where a and b are iterables containing the coordinates of a point in the euclidean space. The function should return the euclidean distance between points a and b. You should not use any module for this function.
+def euclidean(a, b):
+
+a = [2,3]
+b = [5,6]
+euclidean(a, b) # 4.242640687119285
 
 # @TODO # 270 - # Roman Numerals
-# Create a to_roman_numeral function converting a given number to Roman Numerals like:
-# >>> to_roman_numeral(1)
-# 'I'
-# >>> to_roman_numeral(2)
-# 'II'
-# >>> to_roman_numeral(4)
-# 'IV'
-# >>> to_roman_numeral(8)
-# 'VIII'
-# >>> to_roman_numeral(16)
-# 'XVI'
-# >>> to_roman_numeral(32)
-# 'XXXII'
+#
+# roman_numerals = (('M',  1000),
+#                  ('CM', 900),
+#                  ('D',  500),
+#                  ('CD', 400),
+#                  ('C',  100),
+#                  ('XC', 90),
+#                  ('L',  50),
+#                  ('XL', 40),
+#                  ('X',  10),
+#                  ('IX', 9),
+#                  ('V',  5),
+#                  ('IV', 4),
+#                  ('I',  1))
+#
+# def to_roman_numeral(n):
+#     """Convert integer to Roman numeral"""
+#     roman = ""
+#     # if n == 0:
+#     #     return "Nihil" # print("No zero in Roman numerals!")
+#     for numeral, integer in roman_numerals:
+#         while n >= integer:
+#             roman += numeral
+#             n -= integer
+#     return roman
+
+## Test
+# to_roman_numeral(0) # ''
+# to_roman_numeral(1) # 'I'
+# to_roman_numeral(2) # 'II'
+# to_roman_numeral(4) # 'IV'
+# to_roman_numeral(8) # 'VIII'
+# to_roman_numeral(16) # 'XVI'
+# to_roman_numeral(32) # 'XXXII'
+
+## Useless ways of accessing positions: compute instead
+# unites = n % 10
+# dizaines = n % 100 - n % 10
+# centaines = n % 1000 - n % 100
+# milliers = n % 10000 - n % 1000
+#
+# num_pos = len(str(n))
+# tail = int(str(n)[-1])
+# head = int(str(n)[0])
+#
+# for i in range(1,len(str(n))+1):
+#     pos_x = int(str(n)[-i])
+#     print(pos_x)
 
 # 280 - # Exceptions
 
@@ -761,7 +802,18 @@
 
 # @TODO # 350 - # bencode / bdecode
 # @TODO # 360 - # HTTP server
-# @TODO # 440 - # Lambda expressions
+
+# 440 - # Lambda expressions
+# In this exercise, you'll write a function, named filtered, taking two parameters, an iterable, typically a list, and a filter, a lambda expression.
+#
+# def filtered(items, myfilter):
+#     return list(filter(myfilter, items))
+#
+# if __name__ == '__main__':
+#     print(*filtered(list(range(0,101)), lambda x: x % 3 == 0), sep=', ')
+#     print(*filtered(list(range(0,101)), lambda x: x % 5 == 0), sep=', ')
+#     print(*filtered(list(range(0,101)), lambda x: x % 15 == 0), sep=', ')
+
 # @TODO # 450 - # Caesar Cypher
 # @TODO # 451 - # Password Generator
 # @TODO # 455 - # Py Master Mind
