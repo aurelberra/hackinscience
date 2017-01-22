@@ -1,3 +1,13 @@
+a = [2, 3]
+b = []
+any(a)
+any(b)
+all(a)
+all(b)
+
+
+#---------------- C ----------------#
+
 #include <stdio.h>
 #include <cs50.h>
 #include <stdlib.h>
