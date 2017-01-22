@@ -1,3 +1,5 @@
+# Scratchpad
+
 a = [2, 3]
 b = []
 any(a)

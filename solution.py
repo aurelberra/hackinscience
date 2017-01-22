@@ -867,9 +867,9 @@
 #     products_of_thirteen.append(countnum)
 # print(max(products_of_thirteen))
 
-# HACK # 350 - # bencode / bdecode
+# TODO # 350 - # bencode / bdecode
 
-# HACK # 360 - # HTTP server
+# TODO # 360 - # HTTP server
 
 # 440 - # Lambda expressions
 # In this exercise, you'll write a function, named filtered, taking two parameters, an iterable, typically a list, and a filter, a lambda expression.
@@ -882,7 +882,7 @@
 #     print(*filtered(list(range(0, 101)), lambda x: x % 5 == 0), sep=', ')
 #     print(*filtered(list(range(0, 101)), lambda x: x % 15 == 0), sep=', ')
 
-# TODO HACK # 450 - # Caesar Cypher
+# HACK TODO # 450 - # Caesar Cypher
 #
 # from string import ascii_lowercase
 # from string import ascii_uppercase
@@ -1005,11 +1005,11 @@
 # print(*pwgen(10, with_uppercase=False), sep='')
 # print(*pwgen(10, with_digits=False, with_uppercase=False), sep='')
 
-# HACK # 455 - # Py Master Mind
+# TODO # 455 - # Py Master Mind
 
-# HACK # 456 - # Solve Mind
+# TODO # 456 - # Solve Mind
 
-# TODO HACK # 461 - # Optimization 101
+# HACK TODO # 461 - # Optimization 101
 # You must provide a script in which the function benchmark(funcs, a, b) returns a dictionnary where keys are the function names and their values the time it took to execute the given function ten times measured in seconds as a float number.
 # funcs is a list of the function to be tested, which are the one of the exercise 260 (euclidean(a, b) ; opt_euclidean(a, b) ; np_euclidean(a, b))
 # a and b are the coordinates of the two points between which the distance must be measured. We assume that a and b are of the type numpy.ndarray.
@@ -1086,24 +1086,24 @@
 # print(benchs)
 # {'opt_euclidean': 0.009175331972073764, 'euclidean': 0.02502306899987161, 'np_euclidean': 0.002547977026551962}
 
-# TODO HACK # 470 - # IRC logs as CSV
+# HACK TODO # 470 - # IRC logs as CSV
 
-# HACK # 500 - # Largest product in a grid
+# TODO # 500 - # Largest product in a grid
 
-# TODO HACK # 501 - # Change for 42€
+# HACK TODO # 501 - # Change for 42€
 
-# TODO HACK # 515 - # Sequence Mining
+# HACK TODO # 515 - # Sequence Mining
 
-# HACK # 525 - # Longest Collatz sequence
+# TODO # 525 - # Longest Collatz sequence
 
-# HACK # 600 - # Elementary cellular automaton
+# TODO # 600 - # Elementary cellular automaton
 
-# HACK # 650 - # DHT
+# TODO # 650 - # DHT
 
-# HACK # 700 - # Make your own 2048 in python !
+# TODO # 700 - # Make your own 2048 in python !
 
-# HACK # 705 - # Evolve mind
+# TODO # 705 - # Evolve mind
 
-# HACK # 715 - # Sapin
+# TODO # 715 - # Sapin
 
-# HACK # 742 - # Be creative, import math
+# TODO # 742 - # Be creative, import math
