@@ -828,6 +828,8 @@
 # for char, frequency in frequencies.items():
 #     print(char, ': ', '%.2f' % (frequency/sum_frequencies), sep='')
 
+# TODO # 321 - # CSV and Python
+
 # 328 - # Multiply all the given parameters
 # Write a function, mul, that multiplies all numbers of the given list of numbers.
 # like:
@@ -1009,7 +1011,7 @@
 
 # TODO # 456 - # Solve Mind
 
-# HACK TODO # 461 - # Optimization 101
+# 461 - # Optimization 101
 # You must provide a script in which the function benchmark(funcs, a, b) returns a dictionnary where keys are the function names and their values the time it took to execute the given function ten times measured in seconds as a float number.
 # funcs is a list of the function to be tested, which are the one of the exercise 260 (euclidean(a, b) ; opt_euclidean(a, b) ; np_euclidean(a, b))
 # a and b are the coordinates of the two points between which the distance must be measured. We assume that a and b are of the type numpy.ndarray.
@@ -1021,42 +1023,51 @@
 # >>> print(benchs)
 # {'opt_euclidean': 0.009175331972073764, 'euclidean': 0.02502306899987161, 'np_euclidean': 0.002547977026551962}
 #
-import timeit
-# No extra module
-def euclidean(a, b):
-    powers = 0
-    for i in range(0, len(a)):
-        powers += (b[i]-a[i]) ** 2
-    return powers ** 0.5
-
-# Importing math module
-from math import *
-def opt_euclidean(a, b):
-    powers = 0
-    for i in range(0, len(a)):
-        powers += pow(b[i]-a[i], 2)
-    return sqrt(powers)
-
-# Importing numpy module
-import numpy as np
-def np_euclidean(a, b):
-    powers = 0
-    for i in range(0, len(a)):
-        powers += np.power(b[i]-a[i], 2)
-    return sqrt(powers)
-
-def benchmark(funcs, a, b):
-    benchs = {}
-    return {f.__name__: timeit.timeit(lambda: f(a, b), number = 10) for f in funcs}
-    return(benchs)
-
-a = np.random.randint(100, size=100)
-b = np.random.randint(100, size=100)
-funcs = [euclidean, opt_euclidean, np_euclidean]
-benchs = benchmark(funcs, a, b)
-print(benchs)
-
-# {'opt_euclidean': 0.009175331972073764, 'euclidean': 0.02502306899987161, 'np_euclidean': 0.002547977026551962}
+# import timeit
+# # No extra module
+# def euclidean(a, b):
+#     powers = 0
+#     for i in range(0, len(a)):
+#         powers += (b[i]-a[i]) ** 2
+#     return powers ** 0.5
+#
+# # Importing math module
+# from math import *
+# def opt_euclidean(a, b):
+#     powers = 0
+#     for i in range(0, len(a)):
+#         powers += pow(b[i]-a[i], 2)
+#     return sqrt(powers)
+#
+# # Importing numpy module
+# import numpy as np
+# def np_euclidean(a, b):
+#     return np.sqrt(np.sum(np.square((b-a))))
+#
+# def benchmark(funcs, a, b):
+#     benchs = {}
+#     return {f.__name__: timeit.timeit(lambda: f(a, b), number = 10) for f in funcs}
+#     return(benchs)
+#
+## Test
+# a = np.random.randint(100, size=100)
+# b = np.random.randint(100, size=100)
+# funcs = [euclidean, opt_euclidean, np_euclidean]
+# euclidean(a, b)
+# opt_euclidean(a, b)
+# np_euclidean(a, b)
+# benchs = benchmark(funcs, a, b)
+# print(benchs)
+#
+## Remarks
+# Too slow with numpy functions in a loop (where the numpy C library is called len(a) times)
+# import numpy as np
+# def np_euclidean(a, b):
+#     powers = 0
+#     for i in range(0, len(a)):
+#         powers += np.power(b[i]-a[i], 2)
+#     return np.sqrt(powers)
+# timeit.timeit(lambda: np_euclidean(a, b), number = 10)
 
 # HACK TODO # 470 - # IRC logs as CSV
 
