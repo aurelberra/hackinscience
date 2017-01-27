@@ -1,9 +1,9 @@
 #!/usr/local/bin/python3
 
-#-------------------------#
+# ----------------------- #
 # Hackinscience Exercises #
 # 2017-01 CRI             #
-#-------------------------#
+# ----------------------- #
 
 # 001 - # Strings
 
@@ -19,7 +19,7 @@
 #
 # print('zyxwvUtsrqpOnmlkjIhgfEdcbA')
 #
-## Not validated online: the expected solution was much easier
+# --- Not validated online: the expected solution was much easier
 # alpha = 'abcdefghijklmnopqrstuvwxyz'
 # vowels = ['a', 'e', 'i', 'o', 'u']
 # for i in range(0, len(alpha)):
@@ -271,7 +271,7 @@
 #     sorted_l = sorted(l, key=itemgetter(1))
 #     return(sorted_l)
 #
-## With OrderedDict, it works but this is not the output format expected by the validator
+# --- With OrderedDict, it works but this is not the output format expected by the validator
 #
 # from collections import OrderedDict
 # from operator import itemgetter
@@ -281,7 +281,7 @@
 #     return(sorted_l)
 # sort_by_name(my_class)
 #
-## All three functions
+# --- All three functions
 # def sort_a_list(l):
 #     l.sort(reverse=True)
 #     return(l)
@@ -296,7 +296,7 @@
 #     return(sorted_l)
 
 # 097 - # Sets of love
-## 1
+# --- 1
 #
 # alice = ['II', 'IV', 'II', 'XIX', 'XV', 'IV', 'II']
 # bob = ['IV', 'III', 'II', 'XX', 'II', 'XX']
@@ -314,7 +314,7 @@
 #
 # love_meet(bob, alice)
 #
-## 2
+# --- 2
 #
 # alice = ['II', 'IV', 'II', 'XIX', 'XV', 'IV', 'II']
 # bob = ['IV', 'III', 'II', 'XX', 'II', 'XX']
@@ -379,11 +379,11 @@
 #             raise
 #     except:
 #         print('input error')
-## Solution plus compexe pour les erreurs
-    # else:
-    #         raise Exception('Problème !')
-    # except Exception as e:
-    #     print(e)
+# --- Solution plus complexe pour les erreurs
+# else:
+#         raise Exception('Problème !')
+# except Exception as e:
+#     print(e)
 
 # 200 - # Create a function, is_prime, that check if its given number is a prime one
 # Provide a script defining the function is_prime(num).
@@ -418,15 +418,15 @@
 # perfect_shuffle(deck)
 # perfect_shuffle([1, 2, 3, 4, 5, 6])
 #
-## Test: shuffle 10 times a deck of 1024 cards
-## Create deck of 1024 cards
+# --- Test: shuffle 10 times a deck of 1024 cards
+# --- Create deck of 1024 cards
 # deck1024 = []
 # for x in range(1, 1025):
 #     deck1024.append(x)
 # print(deck1024[0])
 # print(deck1024[-1])
 #
-## Shuffle desk1024
+# --- Shuffle desk1024
 # print(perfect_shuffle(deck1024))
 # for i in range(1, 3):
 #     perfect_shuffle(deck1024)
@@ -530,7 +530,7 @@
 
 # 240 - # Print the head of the fibonacci sequence
 #
-## V1 ante corr.
+# --- V1 ante corr.
 # Consider the fibonacci sequence starting with 1, 2, 3. Provide the script that print the 10 first numbers of this sequence, separated by comas and spaces, end with a dot. Such as:
 # 1, 2, 3, X, X, X, X, X, X, X.
 #
@@ -544,7 +544,7 @@
 #     fib.append(fib[-1] + fib[-2])
 # print(*fib, sep=', ', end='.')
 #
-## V2 corrected
+# --- V2 corrected
 # Consider the fibonacci sequence. Provide the script that print the 10 first numbers of this sequence, separated by comas and spaces, end with a dot. Such as:
 # 1, 1, 2, 3, X, X, X, X, X, X.
 #
@@ -676,14 +676,14 @@
 # d = ((5-2) ** 2 + (6-3) ** 2) ** 0.5
 # euclidean(a, b) where a and b are iterables containing the coordinates of a point in the euclidean space. The function should return the euclidean distance between points a and b. You should not use any module for this function.
 #
-## No extra module
+# --- No extra module
 # def euclidean(a, b):
 #     powers = 0
 #     for i in range(0, len(a)):
 #         powers += (b[i]-a[i]) ** 2
 #     return powers ** 0.5
 #
-## Importing math module
+# --- Importing math module
 # from math import *
 # def opt_euclidean(a, b):
 #     powers = 0
@@ -691,7 +691,7 @@
 #         powers += pow(b[i]-a[i], 2)
 #     return sqrt(powers)
 #
-## Importing numpy module
+# --- Importing numpy module
 # import numpy as np
 # def np_euclidean(a, b):
 #     powers = 0
@@ -737,7 +737,7 @@
 #             n -= integer
 #     return roman
 #
-## Test
+# --- Test
 # to_roman_numeral(0) # ''
 # to_roman_numeral(1) # 'I'
 # to_roman_numeral(2) # 'II'
@@ -746,7 +746,7 @@
 # to_roman_numeral(16) # 'XVI'
 # to_roman_numeral(32) # 'XXXII'
 #
-## Useless ways of accessing positions: compute instead
+# --- Useless ways of accessing positions: compute instead
 # unites = n % 10
 # dizaines = n % 100 - n % 10
 # centaines = n % 1000 - n % 100
@@ -1001,7 +1001,7 @@
 #     password = ''.join(passwd)
 #     return password
 #
-## Test
+# --- Test
 # print(*pwgen(10), sep='')
 # print(*pwgen(10, with_digits=False), sep='')
 # print(*pwgen(10, with_uppercase=False), sep='')
@@ -1049,7 +1049,7 @@
 #     return {f.__name__: timeit.timeit(lambda: f(a, b), number = 10) for f in funcs}
 #     return(benchs)
 #
-## Test
+# --- Test
 # a = np.random.randint(100, size=100)
 # b = np.random.randint(100, size=100)
 # funcs = [euclidean, opt_euclidean, np_euclidean]
@@ -1059,7 +1059,7 @@
 # benchs = benchmark(funcs, a, b)
 # print(benchs)
 #
-## Remarks
+# --- Remarks
 # Too slow with numpy functions in a loop (where the numpy C library is called len(a) times)
 # import numpy as np
 # def np_euclidean(a, b):
